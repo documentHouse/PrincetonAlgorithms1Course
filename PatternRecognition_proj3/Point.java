@@ -69,7 +69,8 @@ public class Point implements Comparable<Point> {
             if (that.x == this.x)
                 return Double.POSITIVE_INFINITY;
             else {
-                return (that.y - this.y)/(that.x - this.x);
+                return ((double) that.y - (double) this.y) 
+                    / ((double) that.x - (double) this.x);
             }       
         }
     }
@@ -78,10 +79,10 @@ public class Point implements Comparable<Point> {
     // comparing y-coordinates and breaking ties by x-coordinates
     public int compareTo(Point that) {
         /* YOUR CODE HERE */
-        if(that.y == this.y)
-            return Double.compare(that.x, this.x);
+        if (that.y == this.y)
+            return Double.compare(this.x, that.x);
         else
-            return Double.compare(that.y, this.y);
+            return Double.compare(this.y, that.y);
     }
 
     // return string representation of this point
@@ -93,5 +94,21 @@ public class Point implements Comparable<Point> {
     // unit test
     public static void main(String[] args) {
         /* YOUR CODE HERE */
+        
+        //(1234, 5678)->(14000, 10000)->(32000, 10000)
+        /*
+        Point p1 = new Point(1234, 5678);
+        Point p2 = new Point(14000, 10000);
+        Point p3 = new Point(32000, 10000);
+        
+        System.out.println("p2.y = " + p2.y + "  p1.y = " + p1.y);
+        System.out.println("p1 to p2: " + ((p2.y-p1.y)/(p2.x-p1.x)));
+        
+        System.out.println(p1.slopeTo(p2));
+        System.out.println(p1.slopeTo(p3));
+        System.out.println(p2.slopeTo(p2));
+        System.out.println(p2.slopeTo(p1));
+        */
+        
     }
 }
