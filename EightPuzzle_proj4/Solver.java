@@ -1,5 +1,22 @@
 
 public class Solver {
+    
+    private class SearchNode 
+    {
+        public SearchNode previousSearchNode;
+        public Board currentBoard;
+        public int moves;
+        
+        public SearchNode(Board board)
+        {
+            previousSearchNode = null;
+            currentBoard = board;
+            moves = 0;
+        }
+    }
+    
+    private SearchNode boardHistory;
+    
     public Solver(Board initial)            // find a solution to the initial board (using the A* algorithm)
     {
         
