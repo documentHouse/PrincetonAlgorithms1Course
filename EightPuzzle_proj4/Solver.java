@@ -16,6 +16,8 @@ public class Solver {
     }
     
     private SearchNode boardHistory;
+    private MinPQ initialBoardPriority;
+    private MinPQ twinBoardPriority;
     
     public Solver(Board initial)            // find a solution to the initial board (using the A* algorithm)
     {
